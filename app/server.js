@@ -11,7 +11,10 @@ server.use(cors());
 server.use(bodyParser.json({limit: '50mb'}));
 server.use(bodyParser.urlencoded({limit: '50mb',extended: true,parameterLimit:50000}));
 
-
+server.use('/',(req,res)=>{
+  
+    return res.send("working")
+ })
 
 // user routes
 server.post('/usersignUp',require('./routes/user.route'))
